@@ -1,0 +1,51 @@
+.container {
+  width: 1500px;
+  max-width: 100%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.search-form {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background-color: blue;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.photo-card {
+  margin: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.photo-card img {
+  width: 350px;
+  height: 250px;
+}
+
+.load-more {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: blue;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+}
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
