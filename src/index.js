@@ -51,13 +51,17 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
           loadMoreBtn.style.display = 'none';
           showNotification(
-            "We're sorry, but you've reached the end of search results."
+            `We're sorry, but you've reached the end of search results.`
           );
         }
 
+        // Dodaj lightgallery do obrazów
         lightGallery(gallery, {
           selector: '.lg-zoom-thumbnail',
         });
+
+        // Wyświetl powiadomienie o liczbie znalezionych obrazków
+        showNotification(`Hooray! We found ${data.totalHits} images.`);
       } else {
         showNotification(
           'Sorry, there are no images matching your search query. Please try again.'
