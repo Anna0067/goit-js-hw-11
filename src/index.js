@@ -55,12 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
           );
         }
 
-        // Dodaj lightgallery do obrazów
-        lightGallery(gallery, {
-          selector: '.lg-zoom-thumbnail',
-        });
+        const lightbox = new SimpleLightbox('.gallery a');
 
-        // Wyświetl powiadomienie o liczbie znalezionych obrazków
         showNotification(`Hooray! We found ${data.totalHits} images.`);
       } else {
         showNotification(
@@ -76,14 +72,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const card = document.createElement('div');
     card.classList.add('photo-card');
 
+    const a = document.createElement('a');
+    a.href = image.largeImageURL;
+
     const img = document.createElement('img');
     img.src = image.webformatURL;
     img.alt = image.tags;
     img.loading = 'lazy';
-
-    img.setAttribute('data-src', image.largeImageURL);
-
-    img.classList.add('lg-zoom-thumbnail');
 
     const info = document.createElement('div');
     info.classList.add('info');
@@ -109,7 +104,8 @@ document.addEventListener('DOMContentLoaded', function () {
     info.appendChild(comments);
     info.appendChild(downloads);
 
-    card.appendChild(img);
+    a.appendChild(img);
+    card.appendChild(a);
     card.appendChild(info);
 
     return card;
