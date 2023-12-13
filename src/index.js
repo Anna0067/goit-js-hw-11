@@ -1,3 +1,8 @@
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+import $ from 'jquery';
+import Notiflix from 'notiflix';
+
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('search-form');
   const gallery = document.querySelector('.gallery');
@@ -112,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function showNotification(message) {
-    Notiflix.Notify.Info(message);
+    Notiflix.Notify.info(message);
   }
 
   loadMoreBtn.style.display = 'none';
